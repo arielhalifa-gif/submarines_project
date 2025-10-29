@@ -58,4 +58,21 @@ def render_public(ships: list[list[int]], shots: list[list[bool]]) -> str:
 
 
 def render_reveal(ships: list[list[int]], shots: list[list[bool]]) -> str:
-    
+    for i in range(len(ships)):
+        temp_visual_end = ""
+        for j in range(len(ships[i])):
+            if shots[i][j] == True:
+                if ships[i][j] == 1:
+                    temp_visual_end += f"{"V":3}"
+                else:
+                    temp_visual_end += f"{"x":3}"
+            else:
+                if ships[i][j] == 1:
+                    temp_visual_end += f"{"1":3}"
+                else:
+                    temp_visual_end += f"{"0"}"
+        temp_visual_end += "\n"
+    return temp_visual_end
+
+
+
