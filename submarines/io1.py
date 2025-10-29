@@ -1,4 +1,4 @@
-import board as b, game as g
+import board as b, game as g, io1
 def parse_coords(raw: str, *, one_based: bool = True) -> tuple[int, int] | None:
     # פנקציה שמקבלת סטרינג וממירה לשני מספרים שלמים
     coords = raw.split()
@@ -18,3 +18,9 @@ def print_end(state: dict, won: bool) -> None:
     else:
         print(f"you lose \n dont worry you will get it next time")
     print(b.render_reveal(state["ships"], state["shots"]))
+
+def player_input():
+    print("please enter your game")
+    str_coord = input()
+    tpl_coords_int =io1.parse_coords(str_coord)
+    return tpl_coords_int
